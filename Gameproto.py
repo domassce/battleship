@@ -25,7 +25,6 @@ def singleton(cls):
             instances[cls] = cls(*args, **kwargs)
         return instances[cls]
     return get_instance
-@singleton
 class Board:
     def __init__(self, rows, columns):
         self.rows = int(rows)
@@ -182,7 +181,7 @@ def read_board_config():
         logging.error("Invalid board dimensions in config file:", e)
 def main():
     print("""
-          ___       __   __         ___    ___  __     
+           ___       __   __         ___    ___  __     
      |  | |__  |    /  ` /  \  |\/| |__      |  /  \    
      |/\| |___ |___ \__, \__/  |  | |___     |  \__/    
       __       ___ ___       ___  __          __     
